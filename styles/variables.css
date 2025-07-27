@@ -6,4 +6,7 @@
   --color-hour-hand: #f4f4f4;
   --color-minute-hand: #d0d0d0;
   --color-second-hand: #ff3b3b;
+
+  /* FONT */
+  --font-main: "Russo One", sans-serif;
 }
