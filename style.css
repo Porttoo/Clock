@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+@import url('./styles/reset.css');
+@import url('./styles/variables.css');
+
+/*  GLOBAL STYLE */
+body {
+  color: var(--color-white);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(120deg, #fceabb, #f8b500);
+  background-size: 400% 400%;
+  animation: solarGradient 60s linear infinite;
+  transition: background 1s ease;
+}
+
+/* CENTRAL CLOCK AND INFORMATION CONTAINER */
+.container {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.clock {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.center-dot {
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-white);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+/* CLOCK HANDS (base) */
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(0deg);
+  background-color: white;
+  border-radius: 4px;
+  transition: transform 0.1s ease-out;
+}
+
+/* SPECIFIC STYLES OF WATCH HANDS */
+.hour-hand {
+  width: 6px;
+  height: 110px;
+  background-color: var(--color-hour-hand);
+  z-index: 3;
+}
+
+.minute-hand {
+  width: 4px;
+  height: 130px;
+  background-color: var(--color-minute-hand);
+  z-index: 2;
+}
+
+.second-hand {
+  width: 2px;
+  height: 150px;
+  background-color: var(--color-second-hand);
+  z-index: 1;
+}
+
+/* CLOCK NUMBERS */
+.numbers {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  font-family: var(--font-main);
+}
+
+.number {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-white);
+  transform: translate(-50%, -50%);
+}
+
+/* GENERAL TRANSITIONS: shadow, glow, filter */
+.hand,
+.number,
+.center-dot {
+  transition: box-shadow 1s ease, text-shadow 1s ease, filter 1s ease;
+}
+
+/* INFORMATION: LOCATION, TEMPERATURE, TIME ZONE */
+.info {
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: var(--font-main);
+  font-size: 1rem;
+}
+
+/* FOOTER AND SOCIAL ICONS */
+footer {
+  background-color: transparent;
+  margin-top: 5rem;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.social-icon {
+  width: 40px;
+  height: auto;
+}
+
+footer p {
+  font-family: var(--font-main);
+  font-size: 0.7rem;
+  color: var(--color-white);
+  display: flex;
+  justify-content: center;
+}

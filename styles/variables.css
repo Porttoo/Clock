@@ -1,0 +1,9 @@
+:root {
+  /* MAIN COLOR */
+  --color-white: #ffffff;
+
+  /* CLOCK HANDS */
+  --color-hour-hand: #f4f4f4;
+  --color-minute-hand: #d0d0d0;
+  --color-second-hand: #ff3b3b;
+}
