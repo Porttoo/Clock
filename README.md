@@ -35,27 +35,6 @@ git clone https://github.com/your-username/your-repository.git
   - location.js for LocationIQ
   - temperature.js for OpenWeather
 
-## Project Structure
-
-/
-├── index.html
-├── style.css
-├── main.js
-├── img/
-│   ├── whiteGithubLogo.svg
-│   ├── whiteLinkedinLogo.svg
-├── styles/
-│   ├── reset.css
-│   ├── variables.css
-├── scripts/
-│   ├── location.js
-│   ├── temperature.js
-│   ├── updateClock.js
-│   ├── updateTheme.js
-│   ├── numberPosition.js
-│   └── timezone.js
-└── README.md
-
 ## Author
 
 Gabriel Porto
