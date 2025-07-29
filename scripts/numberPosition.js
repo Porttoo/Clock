@@ -9,7 +9,7 @@ export function numberPosition() {
   const centerX = clock.offsetWidth / 2;
   const centerY = clock.offsetHeight / 2;
   // Distance from center to numbers (adjust according to clock size)
-  const radius = 180;
+  const radius = clock.offsetWidth / 2 - 20;
 
   numbers.forEach((el, index) => {
     // Rotates 30 degrees per number, starting at -60° (number 12 position)

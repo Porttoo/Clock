@@ -8,7 +8,9 @@ import { updateTheme } from "./scripts/theme.js";
 
 // Runs after the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
-  numberPosition(); // Dynamically position numbers around the clock
+  setTimeout(() => {
+    numberPosition(); // Dynamically position numbers around the clock
+  }, 50)
   updateClock();
   setInterval(updateClock, 1000);
   // Get location and display temperature using callback

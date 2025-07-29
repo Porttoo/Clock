@@ -5,7 +5,7 @@
 /*  GLOBAL STYLE */
 body {
   color: var(--color-white);
-  height: 100vh;
+  min-height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +13,9 @@ body {
   background: linear-gradient(120deg, #fceabb, #f8b500);
   background-size: 400% 400%;
   animation: solarGradient 60s linear infinite;
+  -webkit-animation: solarGradient 60s linear infinite;
   transition: background 1s ease;
+  -webkit-transition: background 1s ease;
 }
 
 /* CENTRAL CLOCK AND INFORMATION CONTAINER */
@@ -46,30 +48,33 @@ body {
   bottom: 50%;
   left: 50%;
   transform-origin: bottom;
+  -webkit-transform-origin: bottom;
   transform: translateX(-50%) rotate(0deg);
+  -webkit-transform: translateX(-50%) rotate(0deg);
   background-color: white;
   border-radius: 4px;
   transition: transform 0.1s ease-out;
+  -webkit-transition: -webkit-transform 0.1s ease-out;
 }
 
 /* SPECIFIC STYLES OF WATCH HANDS */
 .hour-hand {
   width: 6px;
-  height: 110px;
+  height: 90px;
   background-color: var(--color-hour-hand);
   z-index: 3;
 }
 
 .minute-hand {
   width: 4px;
-  height: 130px;
+  height: 110px;
   background-color: var(--color-minute-hand);
   z-index: 2;
 }
 
 .second-hand {
   width: 2px;
-  height: 150px;
+  height: 130px;
   background-color: var(--color-second-hand);
   z-index: 1;
 }
@@ -101,6 +106,7 @@ body {
 .number,
 .center-dot {
   transition: box-shadow 1s ease, text-shadow 1s ease, filter 1s ease;
+  -webkit-transition: -webkit-box-shadow 1s ease, -webkit-text-shadow 1s ease, -webkit-filter 1s ease;
 }
 
 /* INFORMATION: LOCATION, TEMPERATURE, TIME ZONE */

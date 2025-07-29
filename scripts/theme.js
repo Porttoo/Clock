@@ -64,12 +64,15 @@ export function updateTheme(date) {
 
     if (isNumber) {
       el.style.textShadow = isNight ? glowEffect : dynamicShadow;
+      el.style.webkitTextShadow = el.style.textShadow;
       el.style.filter = isNight ? "brightness(1.3)" : "none";
       el.style.boxShadow = "none";
     } else {
       el.style.textShadow = "none"; // divs don't support text-shadow well
       el.style.boxShadow = isNight ? glowEffect : dynamicShadow;
+      el.style.webkitBoxShadow = el.style.boxShadow;
       el.style.filter = isNight ? "brightness(1.5)" : "none";
+      el.style.webkitFilter = el.style.filter;
     }
   });
 }
