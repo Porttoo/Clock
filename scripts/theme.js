@@ -23,23 +23,26 @@ export function updateTheme(date) {
 
   // Sky colors for different times of the day
   const skyColors = [
-    { hour: 0,  color1: "#0f2027", color2: "#203a43" }, // Deep night
-    { hour: 6,  color1: "#fceabb", color2: "#f8b500" }, // Dawn
+    { hour: 0, color1: "#0f2027", color2: "#203a43" }, // Deep night
+    { hour: 6, color1: "#fceabb", color2: "#f8b500" }, // Dawn
     { hour: 12, color1: "#f5af19", color2: "#f12711" }, // Midday
     { hour: 18, color1: "#654ea3", color2: "#eaafc8" }, // Sunset
     { hour: 20, color1: "#0f2027", color2: "#203a43" }, // Early evening
-    { hour: 24, color1: "#0f2027", color2: "#203a43" }  // Looping
+    { hour: 24, color1: "#0f2027", color2: "#203a43" }, // Looping
   ];
 
   // Finds the current range based on time
-  let i = skyColors.findIndex((c, idx) => hour >= c.hour && hour < skyColors[idx + 1].hour);
+  let i = skyColors.findIndex(
+    (c, idx) => hour >= c.hour && hour < skyColors[idx + 1].hour
+  );
   if (i === -1) i = 0;
 
   const { color1: from1, color2: from2 } = skyColors[i];
-  const { color1: to1,   color2: to2   } = skyColors[i + 1];
+  const { color1: to1, color2: to2 } = skyColors[i + 1];
 
   // Interpolated progress within hour range
-  const t = (hour - skyColors[i].hour) / (skyColors[i + 1].hour - skyColors[i].hour);
+  const t =
+    (hour - skyColors[i].hour) / (skyColors[i + 1].hour - skyColors[i].hour);
   const bg1 = lerpColor(from1.replace("#", ""), to1.replace("#", ""), t);
   const bg2 = lerpColor(from2.replace("#", ""), to2.replace("#", ""), t);
 
@@ -49,7 +52,7 @@ export function updateTheme(date) {
   // Sets sun shade (during the day) and glare (at night)
   const isNight = hour >= 18 || hour < 6;
   let dynamicShadow = "";
-  let glowEffect = "0 0 10px white, 0 0 20px white";
+  let glowEffect = "0 0 4px white, 0 0 8px white";
 
   if (!isNight) {
     const progress = (hour - 6) / 12;
